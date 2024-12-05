@@ -1,0 +1,19 @@
+{% extends 'usuarios/base.html' %}
+{% block conteudo %}
+    <form action="{% url 'listagem_usuarios' %}" method="post">
+        {% csrf_token %}
+        <div style="display: flex; justify-content: center; flex-direction: column; align-items: center; gap: 20px;">
+            <label class="input input-bordered flex items-center gap-2">
+                Nome 
+                <input name="nome" type="text" class="grow" placeholder="Digite seu nome aqui" />
+            </label>
+            <label class="input input-bordered flex items-center gap-2">
+                Idade
+                <input name="idade" type="text" class="grow" placeholder="Digite sua idade aqui" />
+            </label>
+            <button class="btn btn-accent">Enviar Dados</button>
+        </div>
+    </form>
+{% endblock %}
+
+
